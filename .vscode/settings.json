@@ -1,3 +1,23 @@
 {
-  "solidity.compileUsingRemoteVersion": "v0.8.24+commit.e11b9ed9"
+  "solidity.compileUsingRemoteVersion": "v0.8.24+commit.e11b9ed9",
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#f8eac4",
+    "activityBar.background": "#f8eac4",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#14ab82",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#f8eac4",
+    "statusBar.background": "#f3d996",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#eec868",
+    "statusBarItem.remoteBackground": "#f3d996",
+    "statusBarItem.remoteForeground": "#15202b",
+    "titleBar.activeBackground": "#f3d996",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#f3d99699",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.color": "#f3d996"
 }

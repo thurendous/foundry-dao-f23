@@ -23,7 +23,7 @@ contract MyGovernor is
 {
     constructor(IVotes _token, TimelockController _timelock)
         Governor("MyGovernor")
-        GovernorSettings(7200, /* 1 day */ 50400, /* 1 week */ 0)
+        GovernorSettings(1 days, 1 weeks, 0)
         GovernorVotes(_token)
         GovernorVotesQuorumFraction(10)
         GovernorTimelockControl(_timelock)
@@ -100,6 +100,6 @@ contract MyGovernor is
     }
 
     function _executor() internal view override(Governor, GovernorTimelockControl) returns (address) {
-        return super._executor();
+        return super._executor(); // return the timelock as the executor
     }
 }
