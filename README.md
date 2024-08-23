@@ -7,21 +7,21 @@
 The standard process of how to call a DAO system is recorded in the test: testGovernanceUpdateBox. The process is as follows:
 
 - There is something we want to call in the contract.
-  a. we want to update the value in box contract.
+  - we want to update the value in box contract.
 - We create a proposal about the call including some descriptions.
-  b. `uint256 proposalId = governor.propose(targets, values, calldatas, description);`
+  - `uint256 proposalId = governor.propose(targets, values, calldatas, description);`
 - after a while
-  c. `vm.warp` timestamp and `vm.roll` block number
+  - `vm.warp` timestamp and `vm.roll` block number
 - We vote on the proposal
-  c. `governor.castVoteWithReason(proposalId, 1, reason);`
+  - `governor.castVoteWithReason(proposalId, 1, reason);`
 - after a while
-  c. `vm.warp` timestamp and `vm.roll` block number
+  - `vm.warp` timestamp and `vm.roll` block number
 - We queue the proposal
-  d. `governor.queue(proposalId);`
+  - `governor.queue(proposalId);`
 - after a while
-  e. `vm.warp` timestamp and `vm.roll` block number
+  - `vm.warp` timestamp and `vm.roll` block number
 - We execute the proposal
-  f. `governor.execute(proposalId);`
+  - `governor.execute(proposalId);`
 - The value is updated in the contract.
 
 ## Foundry
