@@ -4,6 +4,26 @@
 2. Every transaction that the DAO wants to send has to be voted on.
 3. We will use ERC20 tokens for voting (Bad model, please research better models as you get better!)
 
+The standard process of how to call a DAO system is recorded in the test: testGovernanceUpdateBox. The process is as follows:
+
+- There is something we want to call in the contract.
+  a. we want to update the value in box contract.
+- We create a proposal about the call including some descriptions.
+  b. `uint256 proposalId = governor.propose(targets, values, calldatas, description);`
+- after a while
+  c. `vm.warp` timestamp and `vm.roll` block number
+- We vote on the proposal
+  c. `governor.castVoteWithReason(proposalId, 1, reason);`
+- after a while
+  c. `vm.warp` timestamp and `vm.roll` block number
+- We queue the proposal
+  d. `governor.queue(proposalId);`
+- after a while
+  e. `vm.warp` timestamp and `vm.roll` block number
+- We execute the proposal
+  f. `governor.execute(proposalId);`
+- The value is updated in the contract.
+
 ## Foundry
 
 **Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**

@@ -2,7 +2,14 @@
 src = "src"
 out = "out"
 libs = ["lib"]
-remappings = ['@openzeppelin/contracts=lib/openzeppelin-contracts/contracts','forge-std/=lib/forge-std/src/']
+remappings = ['@openzeppelin/contracts=lib/openzeppelin-contracts/contracts', 'forge-std/=lib/forge-std/src/']
+fs_permissions = [{ access = "read", path = "./broadcast" }]
 
+[etherscan]
+mainnet = { key = "${ETHERSCAN_API_KEY}" }
+sepolia = { key = "${ETHERSCAN_API_KEY}" }
+
+[rpc_endpoints]
+sepolia = "${SEPOLIA_RPC_URL}"
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
